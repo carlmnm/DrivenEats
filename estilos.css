@@ -40,8 +40,11 @@
     height: 92px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     position: fixed;
-    top: 0
+    top: 0;
+    z-index: 1;
 }
+
+/* agora a barra inferior*/
 
 .barrainf{
     display: flex;
@@ -51,7 +54,8 @@
     width: 414px;
     height: 92px;
     position: fixed;
-    bottom: 0
+    bottom: 0;
+    z-index: 1;
 }
 
 .conteinerbarrainf{
@@ -70,6 +74,104 @@
     font-size: 20px;
     color: #FFFFFF;
     text-align: center;
-
-
 }
+
+/*categorias*/
+
+.prato{
+    height: 258px;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.conteinercategorias{
+    margin-top: 123px;
+    margin-left: 19px;
+    background-color: red;
+}
+
+.titulocat{
+    width: 250px;
+    height: 25px;
+
+    font-family: 'Righteous';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    color: #333333;
+}
+
+.conteineritens{
+    
+}
+
+.itens{
+    display: flex;
+    flex-direction: column;
+    
+    
+    
+    width: 172px;
+    height: 216px;
+    background-color: #FFFFFF;
+    border-radius: 9px;
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+    margin-top: 17px;
+    margin-right: 16px;
+    
+    position: relative;
+}
+
+.imagem{
+    width: 144px;
+    height: 87px;
+    object-fit: cover;
+    position: absolute;
+    top: 18px;
+    left: 14px;
+    right: 14px;
+    border-radius: 4px;
+}
+
+.texto{
+    margin-left: 14px;
+    margin-top: 113px;
+    font-family: 'Roboto';
+}
+
+.nomeitem{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #333333;
+    height: 23px;
+}
+
+.descricaoitem{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 300;
+    color: #a6a6a6;
+    margin-top: 4px;
+    margin-bottom: 5px;
+    height: 39px;
+}
+
+.precoitem{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    height: 19px;
+}
+
+/*fim do prato, agora são as bebidas*/
+
