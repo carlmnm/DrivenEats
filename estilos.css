@@ -8,7 +8,7 @@
 }
 
 .tudo{
-    height: 1026px;
+    height: 1056px;
     width: 414px;
     background-color: #E5E5E5;
 }
@@ -85,6 +85,7 @@
     overflow-x: scroll;
 }
 
+/*para esconder a barra de rolagem*/
 ::-webkit-scrollbar{
     display: none;
 }
@@ -92,11 +93,11 @@
 .conteinercategorias{
     margin-top: 123px;
     margin-left: 19px;
-    background-color: red;
+    
 }
 
 .titulocat{
-    width: 250px;
+    width: 320px;
     height: 25px;
 
     font-family: 'Righteous';
@@ -151,6 +152,8 @@
     font-weight: 700;
     color: #333333;
     height: 23px;
+    width: 144px;
+    margin-top: 8px;
 }
 
 .descricaoitem{
@@ -159,8 +162,8 @@
     font-size: 15px;
     font-weight: 300;
     color: #a6a6a6;
-    margin-top: 4px;
-    margin-bottom: 5px;
+  
+    
     height: 39px;
 }
 
