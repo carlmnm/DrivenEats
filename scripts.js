@@ -1,3 +1,6 @@
+let prato;
+let bebida;
+let sobremesa;
 
 function selecionarprato(selecao){
     const pri = selecao.classList.contains("feijoada");
@@ -7,23 +10,27 @@ function selecionarprato(selecao){
     const iconizadomac = document.querySelector(".iconemacaxeira");
     const iconizadocuscuz = document.querySelector(".iconecuscuz");
 
-    if (pri == true){
+    if (pri===true){
+        prato = "Feijoada";
+
         selecao.classList.remove("branco");
         selecao.classList.toggle("verde");
 
         
-        iconizadofei.classList.toggle("escondido")
+        iconizadofei.classList.toggle("escondido");
 
         const itemcarne = document.querySelector(".carne");
-        iconizadomac.classList.add("escondido")
-        itemcarne.classList.remove("verde")
-        itemcarne.classList.add("branco")
-        const itemcuscuz = document.querySelector(".cuscuz")
-        iconizadocuscuz.classList.add("escondido")
-        itemcuscuz.classList.remove("verde")
-        itemcuscuz.classList.add("branco")
+        iconizadomac.classList.add("escondido");
+        itemcarne.classList.remove("verde");
+        itemcarne.classList.add("branco");
+        const itemcuscuz = document.querySelector(".cuscuz");
+        iconizadocuscuz.classList.add("escondido");
+        itemcuscuz.classList.remove("verde");
+        itemcuscuz.classList.add("branco");
 
-        }   else if (seg == true){
+        }   else if (seg === true){
+        prato = "Carne de Sol";
+
         selecao.classList.remove("branco");
         selecao.classList.toggle("verde");
 
@@ -40,6 +47,8 @@ function selecionarprato(selecao){
         itemcuscuz.classList.add("branco")
 
         }   else if (ter==true){
+        prato = "Cuscuz Temperado";
+
         selecao.classList.remove("branco");
         selecao.classList.add("verde");
 
@@ -70,6 +79,8 @@ function selecionarbebida(selecao){
     const iconizadosuco = document.querySelector(".iconesuco");
     
     if (pri == true){
+        bebida = "Água";
+
         selecao.classList.remove("branco");
         selecao.classList.toggle("verde");
 
@@ -85,6 +96,8 @@ function selecionarbebida(selecao){
         itemsuco.classList.add("branco")
 
         }   else if (seg == true){
+        bebida = "Caldo de Cana";
+
         selecao.classList.remove("branco");
         selecao.classList.add("verde");
 
@@ -100,6 +113,8 @@ function selecionarbebida(selecao){
         itemsuco.classList.add("branco")
 
         }   else if (ter==true){
+        bebida = "Suco";
+
         selecao.classList.remove("branco");
         selecao.classList.add("verde");
 
@@ -128,6 +143,8 @@ function selecionarsobremesa(selecao){
     const iconizadopud = document.querySelector(".iconepudim");
     const iconizadobolo = document.querySelector(".iconebolo");
     if (pri == true){
+        sobremesa = "Dindim";
+
         selecao.classList.remove("branco");
         selecao.classList.toggle("verde");
 
@@ -143,8 +160,10 @@ function selecionarsobremesa(selecao){
         itembolo.classList.add("branco")
 
         }   else if (seg == true){
+        sobremesa = "Pudim";
+
         selecao.classList.remove("branco");
-        selecao.classList.add("verde");
+        selecao.classList.toggle("verde");
 
         iconizadopud.classList.toggle("escondido");
 
@@ -158,8 +177,10 @@ function selecionarsobremesa(selecao){
         itembolo.classList.add("branco")
 
         }   else if (ter==true){
+        sobremesa = "Bolo de Cenoura";
+
         selecao.classList.remove("branco");
-        selecao.classList.add("verde");
+        selecao.classList.toggle("verde");
 
         iconizadobolo.classList.toggle("escondido");
 
@@ -171,7 +192,18 @@ function selecionarsobremesa(selecao){
         iconizadopud.classList.add("escondido");
         itempudim.classList.remove("verde")
         itempudim.classList.add("branco")
+        finalizado()
+    }
+}
 
+function finalizado(){
+    const botao = document.querySelector(".conteinerbarrainf")
+    console.log(botao)
+    if (prato && bebida && sobremesa !== undefined){
+
+        botao.classList.toggle("conteinerbarrainf")
+        botao.classList.toggle("finalizar")
+        botao.innerHTML = "Finalizar Pedido"
     }
 }
 
