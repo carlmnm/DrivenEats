@@ -169,13 +169,30 @@
 }
 
 .precoitem{
-    
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+
     font-size: 16px;
     font-weight: 400;
     color: #000000;
     height: 19px;
+    width: 66px;
     margin-top: 17px;
 }
+
+.escondido{
+    display: none;
+}
+
+.icone{
+    font-size: 20px;
+    position: absolute;
+    right: 6px;
+    bottom: 9px;
+    color: rgb(0, 238, 0)
+}
+
 
 /*js*/
 
