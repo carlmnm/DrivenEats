@@ -2,7 +2,11 @@ let prato;
 let bebida;
 let sobremesa;
 
-function selecionarprato(selecao){
+let preçoSobremesa;
+let preçoBebida;
+let preçoPrato;
+
+function selecionarprato(selecao) {
     const pri = selecao.classList.contains("feijoada");
     const seg = selecao.classList.contains("carne");
     const ter = selecao.classList.contains("cuscuz");
@@ -10,13 +14,14 @@ function selecionarprato(selecao){
     const iconizadomac = document.querySelector(".iconemacaxeira");
     const iconizadocuscuz = document.querySelector(".iconecuscuz");
 
-    if (pri===true){
+    if (pri === true) {
         prato = "Feijoada";
+        preçoPrato = 14.90
 
         selecao.classList.remove("branco");
         selecao.classList.toggle("verde");
 
-        
+
         iconizadofei.classList.toggle("escondido");
 
         const itemcarne = document.querySelector(".carne");
@@ -28,13 +33,14 @@ function selecionarprato(selecao){
         itemcuscuz.classList.remove("verde");
         itemcuscuz.classList.add("branco");
 
-        }   else if (seg === true){
+    } else if (seg === true) {
         prato = "Carne de Sol";
+        preçoPrato = 25.90
 
         selecao.classList.remove("branco");
         selecao.classList.toggle("verde");
 
-    
+
         iconizadomac.classList.toggle("escondido")
 
         const itemfeijoada = document.querySelector(".feijoada");
@@ -46,13 +52,14 @@ function selecionarprato(selecao){
         itemcuscuz.classList.remove("verde")
         itemcuscuz.classList.add("branco")
 
-        }   else if (ter==true){
+    } else if (ter == true) {
         prato = "Cuscuz Temperado";
+        preçoPrato = 19.90
 
         selecao.classList.remove("branco");
         selecao.classList.add("verde");
 
-        
+
         iconizadocuscuz.classList.toggle("escondido")
 
 
@@ -66,20 +73,21 @@ function selecionarprato(selecao){
         itemfeijoada.classList.add("branco")
 
     }
+    finalizado()
 
-    
 }
 
-function selecionarbebida(selecao){
+function selecionarbebida(selecao) {
     const pri = selecao.classList.contains("agua");
     const seg = selecao.classList.contains("caldo");
     const ter = selecao.classList.contains("suco");
     const iconizadoagu = document.querySelector(".iconeagua");
     const iconizadocal = document.querySelector(".iconecaldo");
     const iconizadosuco = document.querySelector(".iconesuco");
-    
-    if (pri == true){
+
+    if (pri == true) {
         bebida = "Água";
+        preçoBebida = 3.50
 
         selecao.classList.remove("branco");
         selecao.classList.toggle("verde");
@@ -95,11 +103,12 @@ function selecionarbebida(selecao){
         itemsuco.classList.remove("verde")
         itemsuco.classList.add("branco")
 
-        }   else if (seg == true){
+    } else if (seg == true) {
         bebida = "Caldo de Cana";
+        preçoBebida = 5.90
 
         selecao.classList.remove("branco");
-        selecao.classList.add("verde");
+        selecao.classList.toggle("verde");
 
         iconizadocal.classList.toggle("escondido");
 
@@ -112,11 +121,12 @@ function selecionarbebida(selecao){
         itemsuco.classList.remove("verde")
         itemsuco.classList.add("branco")
 
-        }   else if (ter==true){
+    } else if (ter == true) {
         bebida = "Suco";
+        preçoBebida = 6.50
 
         selecao.classList.remove("branco");
-        selecao.classList.add("verde");
+        selecao.classList.toggle("verde");
 
         iconizadosuco.classList.toggle("escondido");
 
@@ -128,22 +138,22 @@ function selecionarbebida(selecao){
         iconizadocal.classList.add("escondido");
         itemcaldo.classList.remove("verde")
         itemcaldo.classList.add("branco")
-
     }
+    finalizado()
 
-    
-    
+
 }
 
-function selecionarsobremesa(selecao){
+function selecionarsobremesa(selecao) {
     const pri = selecao.classList.contains("dindim");
     const seg = selecao.classList.contains("pudim");
     const ter = selecao.classList.contains("bolo");
     const iconizadodin = document.querySelector(".iconedindim");
     const iconizadopud = document.querySelector(".iconepudim");
     const iconizadobolo = document.querySelector(".iconebolo");
-    if (pri == true){
+    if (pri == true) {
         sobremesa = "Dindim";
+        preçoSobremesa = 3.50
 
         selecao.classList.remove("branco");
         selecao.classList.toggle("verde");
@@ -159,8 +169,9 @@ function selecionarsobremesa(selecao){
         itembolo.classList.remove("verde")
         itembolo.classList.add("branco")
 
-        }   else if (seg == true){
+    } else if (seg == true) {
         sobremesa = "Pudim";
+        preçoSobremesa = 5.00
 
         selecao.classList.remove("branco");
         selecao.classList.toggle("verde");
@@ -176,8 +187,9 @@ function selecionarsobremesa(selecao){
         itembolo.classList.remove("verde")
         itembolo.classList.add("branco")
 
-        }   else if (ter==true){
+    } else if (ter == true) {
         sobremesa = "Bolo de Cenoura";
+        preçoSobremesa = 6.90
 
         selecao.classList.remove("branco");
         selecao.classList.toggle("verde");
@@ -192,18 +204,35 @@ function selecionarsobremesa(selecao){
         iconizadopud.classList.add("escondido");
         itempudim.classList.remove("verde")
         itempudim.classList.add("branco")
-        finalizado()
+
     }
+    finalizado()
 }
 
-function finalizado(){
+function finalizado() {
     const botao = document.querySelector(".conteinerbarrainf")
     console.log(botao)
-    if (prato && bebida && sobremesa !== undefined){
+    if (prato !== undefined && bebida !== undefined && sobremesa !== undefined) {
 
-        botao.classList.toggle("conteinerbarrainf")
-        botao.classList.toggle("finalizar")
+
+        botao.classList.add("finalizar")
         botao.innerHTML = "Finalizar Pedido"
+    } else {
+        botao.classList.remove("finalizar")
+    }
+
+}
+
+function abrirZap(botaoFinal) {
+
+    if (botaoFinal.classList.contains("finalizar")) {
+        let preçoTotal = preçoBebida + preçoPrato + preçoSobremesa
+    
+        let mensagem = "Olá, gostaria de fazer o pedido: \n" + "- Prato: " + prato + "\n" + "- Bebida: " + bebida + "\n" + "- Sobremesa: " + sobremesa + "\n" + "Total: R$ " + preçoTotal.toFixed(2);
+        mensagem = encodeURIComponent(mensagem)
+        
+        window.open("https://wa.me/5583998465525?text=" + mensagem);
+        
     }
 }
 
